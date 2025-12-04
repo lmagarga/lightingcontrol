@@ -1,0 +1,17 @@
+#
+# Set the PATH explicitly
+#
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
+#
+# Turn evening lights on twice
+30 16 * * * dotnet run on --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
+31 16 * * * dotnet run on --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
+# Turn evening lights off twice
+00 22 * * * dotnet run off --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
+01 22 * * * dotnet run off --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
+# Turn xmas tree on twice
+32 16 * * * dotnet run xmason --project ~lmagarga/Documents/lightingcontrol >/tmp/xmascron.stdout.log 2>/tmp/xmascron.stderr.log
+33 16 * * * dotnet run xmason --project ~lmagarga/Documents/lightingcontrol >/tmp/xmascron.stdout.log 2>/tmp/xmascron.stderr.log
+# Turn xmas tree off twice
+00 23 * * * dotnet run xmasoff --project ~lmagarga/Documents/lightingcontrol >/tmp/xmascron.stdout.log 2>/tmp/xmascron.stderr.log
+01 23 * * * dotnet run xmasoff --project ~lmagarga/Documents/lightingcontrol >/tmp/xmascron.stdout.log 2>/tmp/xmascron.stderr.log
