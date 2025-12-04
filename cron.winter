@@ -3,6 +3,11 @@
 #
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
 #
+# Test cron launch
+#
+#* * * * * dotnet run on --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.test.stdout.log 2>/tmp/cron.test.stderr.log
+#* * * * * dotnet run xmason --project ~lmagarga/Documents/lightingcontrol >/tmp/xmascron.test.stdout.log 2>/tmp/xmascron.test.stderr.log
+#
 # Turn evening lights on twice
 30 16 * * * dotnet run on --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
 31 16 * * * dotnet run on --project ~lmagarga/Documents/lightingcontrol >/tmp/cron.stdout.log 2>/tmp/cron.stderr.log
